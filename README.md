@@ -16,7 +16,7 @@ The ALU will take in two 32-bit values, and control line. An Arithmetic unit doe
 
 ![image](https://github.com/user-attachments/assets/e574788c-253f-46da-8468-298fe2844f7a)
 
-                          # Fig 1 : Block Diagram of 32 Bit ALU 
+# Fig 1 : Block Diagram of 32 Bit ALU 
 
 # Creating a Work space :
 
@@ -60,10 +60,7 @@ The ALU will take in two 32-bit values, and control line. An Arithmetic unit doe
       
 	After this you can see the window like below 
 
-
-
-
-                          # Fig 2: Invoke the Cadence Environment
+# Fig 2: Invoke the Cadence Environment
 
 	To Launch Simulation tool 
 
@@ -76,15 +73,13 @@ The ALU will take in two 32-bit values, and control line. An Arithmetic unit doe
 
 	It will invoke the nclaunch window for functional simulation we can compile,elaborate and simulate it using Multiple Step .
 
-
-                               # Fig 3: Setting Multi-step simulation
+# Fig 3: Setting Multi-step simulation
 
 	Select Multiple Step and then select “Create cds.lib File” as shown in below figure 
 
 	Click the cds.lib file and save the file by clicking on Save option 
 
-
-                                # Fig 4:cds.lib file Creation
+# Fig 4:cds.lib file Creation
 
 	Save cds.lib file and select the correct option for cds.lib file format based on the HDL Language and Libraries used. 
 
@@ -96,7 +91,7 @@ The ALU will take in two 32-bit values, and control line. An Arithmetic unit doe
 
 ![image](https://github.com/user-attachments/assets/d5202b97-ee5c-4e0e-9eaf-5f3fa733e546)
 
-                              # Fig 5: Selection of Don’t include any libraries
+# Fig 5: Selection of Don’t include any libraries
 
 	A ‘NCLaunch window’ appears as shown in figure below
 
@@ -106,7 +101,89 @@ The ALU will take in two 32-bit values, and control line. An Arithmetic unit doe
 
 	To perform the function simulation, the following three steps are involved Compilation, Elaboration and Simulation. 
 
-                               # Fig 6: Nclaunch Window
+# Fig 6: Nclaunch Window
+
+# Step 1: Compilation:
+
+– Process to check the correct Verilog language syntax and usage 
+
+	Inputs: Supplied are Verilog design and test bench codes 
+
+	Outputs: Compiled database created in mapped library if successful, generates report else error reported in log file 
+
+# 	Steps for compilation: 
+
+1. Create work/library directory (most of the latest simulation tools creates automatically)
+   
+2. Map the work to library created (most of the latest simulation tools creates automatically)
+   
+3. Run the compile command with compile options
+   
+i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v 
+
+Left side select the file and in Tools : launch verilog compiler with current selection will get enable. Click it to compile the code 
+
+Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation 
+
+# Fig 7: Compiled database in worklib
+
+	After compilation it will come under worklib you can see in right side window
+
+	Select the test bench and compile it. It will come under worklib. Under Worklib you can see the module and test-bench. 
+
+	The cds.lib file is an ASCII text file. It defines which libraries are accessible and where they are located. It contains statements that map logical library names to their physical
+
+directory paths. For this Design, you will define a library called “worklib”
+
+# Step 2: Elaboration:– 
+
+To check the port connections in hierarchical design
+
+	Inputs: Top level design / test bench Verilog codes 
+
+	Outputs: Elaborate database updated in mapped library if successful, generates report else error reported in log file 
+
+# 	Steps for elaboration 
+
+– Run the elaboration command with elaborate options 
+
+1.	It builds the module hierarchy
+
+2.	Binds modules to module instances 
+
+3.	Computes parameter values
+
+4.	Checks for hierarchical names conflicts
+
+5.	It also establishes net connectivity and prepares all of this for simulation
+
+	After elaboration the file will come under snapshot. Select the test bench and simulate it.
+
+# Fig 8: Elaboration Launch Option
+
+# Step 3: Simulation: 
+
+– Simulate with the given test vectors over a period of time to observe the output behaviour. 
+
+	Inputs: Compiled and Elaborated top level module name 
+
+	Outputs: Simulation log file, waveforms for debugging 
+
+	Simulation allow to dump design and test bench signals into a waveform 
+
+	Steps for simulation – Run the simulation command with simulator options
+
+# Fig 9: Design Browser window for simulation
+
+# Fig 10:Simulation Waveform Window
+
+# Fig 11:Simulation Waveform Window
+
+
+
+
+
+
 
 
 
