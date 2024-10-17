@@ -10,10 +10,10 @@ case(f)
 3'b001:y=a|b; //OR Operation
 3'b010:y=~(a&b); //NAND Operation
 3'b011:y=~(a|b); //NOR Operation
-3'b010:y=a+b; //Addition
-3'b011:y=a-b; //Subtraction
-3'b100:y=a*b; //Multiply
-default:y=32'bx;
+3'b100:y=a^b; //XOR Operation
+3'b101:y=~(a^b); //XNOR Operation
+3'b110:y=~a; //NOT of a
+3'b111:y=~b; //NOT of b
 endcase
 end
 endmodule
